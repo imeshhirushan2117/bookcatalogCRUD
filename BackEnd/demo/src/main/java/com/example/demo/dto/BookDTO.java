@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Data
 public class BookDTO {
-        private int id;
+        private String id;
         private String name;
         private double price;
         private String Author;

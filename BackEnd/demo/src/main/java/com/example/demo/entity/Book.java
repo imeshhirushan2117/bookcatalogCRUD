@@ -14,8 +14,8 @@ import javax.persistence.Id;
 
 public class Book {
     @Id
-    private int id;
+    private String id;
     private String name;
     private double price;
-    private String Author;
+    private String author;
 }

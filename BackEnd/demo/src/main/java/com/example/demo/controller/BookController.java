@@ -26,8 +26,8 @@ public class BookController {
     }
 
     @PutMapping("/updateBook")
-    public String updateBook(){
-        return "update Book";
+    public BookDTO updateBook(@RequestBody BookDTO bookDTO){
+        return bookService.updateBook(bookDTO);
     }
 
     @DeleteMapping("/deleteBook")

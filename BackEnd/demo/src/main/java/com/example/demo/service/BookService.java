@@ -31,5 +31,10 @@ public class BookService {
         return modelMapper.map(bookList,new TypeToken<List<BookDTO>>(){}.getType());
     }
 
+    public BookDTO updateBook(BookDTO bookDTO){
+        bookRepo.save(modelMapper.map(bookDTO,Book.class));
+        return bookDTO;
+    }
+
 }
 

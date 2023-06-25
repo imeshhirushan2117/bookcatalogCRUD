@@ -16,4 +16,9 @@ public class BookController {
     public String saveBook(){
         return "save Book";
     }
+
+    @PutMapping("/updateBook")
+    public String updateBook(){
+        return "update Book";
+    }
 }

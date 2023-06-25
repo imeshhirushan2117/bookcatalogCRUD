@@ -11,7 +11,20 @@ import Table from "@mui/joy/Table";
 class Home extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      formData : {
+        id:"",
+        name:"",
+        price:"",
+        author:"",
+      }
+    }
   }
+
+  submitBooks = (e) => {
+     let formData = this.state.formData;
+     console.log("Form data : " + formData);
+  };
 
   render() {
     return (
@@ -39,6 +52,14 @@ class Home extends Component {
                 variant="outlined"
                 size="small"
                 style={{ width: "100%" }}
+                value={this.state.formData.id}
+
+                onChange={(e) => {
+                  let formData = e. target.value;
+                  this.setState({formData});
+                }}
+                
+
                 validators={["required"]}
               />
             </Grid>
@@ -51,6 +72,12 @@ class Home extends Component {
                 variant="outlined"
                 size="small"
                 style={{ width: "100%" }}
+                value={this.state.formData.name}
+
+                onChange={(e) => {
+                  let formData = e. target.value;
+                  this.setState({formData});
+                }}
                 validators={["required"]}
               />
             </Grid>
@@ -63,6 +90,12 @@ class Home extends Component {
                 variant="outlined"
                 size="small"
                 style={{ width: "100%" }}
+                value={this.state.formData.price}
+
+                onChange={(e) => {
+                  let formData = e. target.value;
+                  this.setState({formData});
+                }}
                 validators={["required"]}
               />
             </Grid>
@@ -75,13 +108,21 @@ class Home extends Component {
                 variant="outlined"
                 size="small"
                 style={{ width: "100%" }}
+                value={this.state.formData.author}
+
+                onChange={(e) => {
+                  let formData = e. target.value;
+                  this.setState({formData});
+                }}
                 validators={["required"]}
               />
             </Grid>
 
             <Box className="btnclss">
               <Button id="saveBtn" color="success">
-                Save Book
+                Save Book 
+
+                
               </Button>
             </Box>
           </Grid>

@@ -5,6 +5,8 @@ import com.example.demo.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "api/v1/book")
 @CrossOrigin
@@ -14,8 +16,8 @@ public class BookController {
     private BookService bookService;
 
     @GetMapping("/getBook")
-    public String getBook(){
-        return "getBook";
+    public List<BookDTO> getBook(){
+        return bookService.getAllBooks();
     }
 
     @PostMapping("/saveBook")

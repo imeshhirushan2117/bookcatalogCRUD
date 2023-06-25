@@ -4,10 +4,12 @@ import com.example.demo.dto.BookDTO;
 import com.example.demo.entity.Book;
 import com.example.demo.repo.BookRepo;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @Transactional
@@ -23,4 +25,11 @@ public class BookService {
         bookRepo.save(modelMapper.map(bookDTO, Book.class));
         return bookDTO;
     }
+
+    public List<BookDTO> getAllBooks(){
+        List<Book> bookList = bookRepo.findAll();
+        return modelMapper.map(bookList,new TypeToken<List<BookDTO>>(){}.getType());
+    }
+
 }
+

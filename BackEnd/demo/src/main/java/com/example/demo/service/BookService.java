@@ -36,5 +36,10 @@ public class BookService {
         return bookDTO;
     }
 
+    public boolean deleteBook (BookDTO bookDTO){
+        bookRepo.delete(modelMapper.map(bookDTO,Book.class));
+        return true;
+    }
+
 }
 

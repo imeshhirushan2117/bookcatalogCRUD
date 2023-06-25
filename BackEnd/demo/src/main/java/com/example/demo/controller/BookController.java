@@ -31,7 +31,7 @@ public class BookController {
     }
 
     @DeleteMapping("/deleteBook")
-    public String deleteBook(){
-        return "delete Book";
+    public boolean deleteBook(@RequestBody BookDTO bookDTO){
+        return bookService.deleteBook(bookDTO);
     }
 }

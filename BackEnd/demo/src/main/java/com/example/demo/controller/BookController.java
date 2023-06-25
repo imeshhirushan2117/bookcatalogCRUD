@@ -21,4 +21,9 @@ public class BookController {
     public String updateBook(){
         return "update Book";
     }
+
+    @DeleteMapping("/deleteBook")
+    public String deleteBook(){
+        return "delete Book";
+    }
 }

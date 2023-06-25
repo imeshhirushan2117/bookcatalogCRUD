@@ -81,31 +81,32 @@ class Home extends Component {
 
             <Box className="btnclss">
               <Button id="saveBtn" color="success">
-                Save Book 
+                Save Book
               </Button>
             </Box>
           </Grid>
         </ValidatorForm>
-
-        <Table aria-label="basic table">
-          <thead>
-            <tr>
-              <th>Book Id</th>
-              <th style={{ width: "25%" }}>Book name</th>
-              <th>Price</th>
-              <th style={{ width: "20%" }} >Author</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Boo1</td>
-              <td>Shalok Hormas</td>
-              <td>520</td>
-              <td>chandana mendis</td>
-            </tr>
-          </tbody>
-        </Table>
+        <Grid contaner style={{ marginTop: "15px" }}>
+          <Table aria-label="basic table">
+            <thead>
+              <tr>
+                <th>Book Id</th>
+                <th style={{ width: "25%" }}>Book name</th>
+                <th>Price</th>
+                <th style={{ width: "20%" }}>Author</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>B001</td>
+                <td>Shalok Hormas</td>
+                <td>520</td>
+                <td>chandana mendis</td>
+              </tr>
+            </tbody>
+          </Table>
+        </Grid>
       </>
     );
   }

@@ -7,6 +7,7 @@ import Box from "@mui/joy/Box";
 import Button from "@mui/joy/Button";
 import "./style.css";
 import Table from "@mui/joy/Table";
+import BookService from "../../service/BookService";
 
 class Home extends Component {
   constructor(props) {
@@ -21,10 +22,14 @@ class Home extends Component {
     }
   }
 
-  submitBooks = (e) => {
+  submitBooks = async () => {
+   
      let formData = this.state.formData;
-     console.log("Form data : " + formData);
+     let res =await  BookService.postBook(formData)
+      console.log(res)
+    //  console.log("Form data : " + JSON.stringify(formData));
   };
+
 
   render() {
     return (
@@ -119,10 +124,8 @@ class Home extends Component {
             </Grid>
 
             <Box className="btnclss">
-              <Button id="saveBtn" color="success">
-                Save Book 
-
-                
+              <Button id="saveBtn" color="success"  onClick={this.submitBooks}>
+                Save Book
               </Button>
             </Box>
           </Grid>
